@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/person"
+        android:title="Exercise"
+        android:icon="@drawable/ic_exercise"/>
+    <item
+        android:id="@+id/home"
+        android:title="Health Tips"
+        android:icon="@drawable/ic_health"/>
+    <item
+        android:id="@+id/progress"
+        android:title="Progress"
+        android:icon="@drawable/ic_progress"/>
+</menu>
+    <!--  for images  add vector assist  not  image assist -->
