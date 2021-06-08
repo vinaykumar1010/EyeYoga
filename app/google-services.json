@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "45597077398",
+    "project_id": "eyeyoga-dd82e",
+    "storage_bucket": "eyeyoga-dd82e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:45597077398:android:6fe26b951ce2ce459f37b7",
+        "android_client_info": {
+          "package_name": "com.vinay.eyeexercise"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "45597077398-l37vamjb0nlep7j9g6423ejf7dv3nnea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS1ppvjKt7LY7IGQ3owrNYmkBf_zok9d0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "45597077398-l37vamjb0nlep7j9g6423ejf7dv3nnea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

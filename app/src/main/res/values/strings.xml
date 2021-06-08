@@ -2,4 +2,6 @@
     <string name="app_name">EyeExercise</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exercises">Eye Exercises</string>
+    <string name="text_notification">Notification</string>
 </resources>

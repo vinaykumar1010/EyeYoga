@@ -3,14 +3,18 @@
     <item
         android:id="@+id/person"
         android:title="Exercise"
-        android:icon="@drawable/ic_exercise"/>
+        android:icon="@drawable/ic_exercise_logo" />
     <item
         android:id="@+id/home"
         android:title="Health Tips"
-        android:icon="@drawable/ic_health"/>
+        android:icon="@drawable/ic_health_logo" />
     <item
         android:id="@+id/progress"
         android:title="Progress"
-        android:icon="@drawable/ic_progress"/>
+        android:icon="@drawable/ic_progres_logo" />
+    <item
+        android:id="@+id/setting"
+        android:title="Setting"
+        android:icon="@drawable/ic_setting_logo" />
 </menu>
     <!--  for images  add vector assist  not  image assist -->
