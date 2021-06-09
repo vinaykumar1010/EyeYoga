@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
@@ -30,16 +31,16 @@ public class ExercisesAdapter extends ArrayAdapter<FirstDataModel> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         String name = getItem(position).getName();
-        FirstDataModel linkObj = new FirstDataModel(name);
+//        FirstDataModel linkObj = new FirstDataModel(name);
 
         // Get table cell View
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
 
         TextView named = convertView.findViewById(R.id.name_tv);
+
         // Set data to view
         named.setText(name);
         return convertView;
     }
-
 }

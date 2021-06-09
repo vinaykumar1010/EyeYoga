@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name="com.vinay.eyeexercise.MainActivity"></activity>
-        <activity android:name="com.vinay.eyeexercise.IntroActivity"
+        <activity android:name=".TimerActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".IntroActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

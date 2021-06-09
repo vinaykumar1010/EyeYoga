@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF"
+    android:background="#FFFFFF"
     tools:context="com.vinay.eyeexercise.MainActivity">
 
     <FrameLayout
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:elevation="2dp"
-        android:background="#F5F5F5"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

@@ -1,16 +1,21 @@
 package com.vinay.eyeexercise;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -21,6 +26,8 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class FirstFragment extends Fragment {
+
+
     private View view;
     private String TAG = "exerciseabc";
     // TODO: Rename parameter arguments, choose names that match
@@ -60,6 +67,9 @@ public class FirstFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "on create is called");
         super.onCreate(savedInstanceState);
+
+
+        getActivity().setTitle("Exercise");
         exercisesAdapter = new ExercisesAdapter(getActivity(), R.layout.exercise_adapter_link_layout, list);
 
         FirebaseManager firebaseManagerObj = new FirebaseManager();
@@ -90,6 +100,7 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "on create view is called ");
+
         if (view == null) {
             view = inflater.inflate(R.layout.first_fragment, container, false);
         } else {
@@ -98,13 +109,36 @@ public class FirstFragment extends Fragment {
         }
 
         Log.d(TAG, "list is here" + String.valueOf(list));
+
+
         ListView mListView = view.findViewById(R.id.exercise_list);
         mListView.setAdapter(exercisesAdapter);
         Log.d(TAG, "list item is in on create view " + String.valueOf(list));
 
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
+                // String selectedItem = (String) mListView.getItemAtPosition(position);
+                Log.d(TAG, "clicked on list item");
+                Intent intent = new Intent(view.getContext(), TimerActivity.class);
+
+                FirstDataModel itemValue = (FirstDataModel) mListView.getItemAtPosition(position);
+                // We directly send data model  and in Timer Activity we Serialize it first then
+                // get the name by calling method on it
+                // u can use either serilizable or paraseable interface because only primitive data type can b sent through intent
+                intent.putExtra("COURSE_SELECTED", itemValue);
+                startActivity(intent);
+            }
+        });
+
 //        callFirebase(mListView);
         return view;
     }
+
 
     void callFirebase(ListView mListView) {
 

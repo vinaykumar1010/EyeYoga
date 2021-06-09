@@ -12,9 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
     final Fragment fragment1 = new FirstFragment();
     final Fragment fragment2 = new SecondFragment();
     final Fragment fragment3 = new ThirdFragment();
@@ -26,17 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-//        super.onCreate(savedInstace);
-//        this.setContentView(R.layout.main);
-//        RelativeLayout layout = findViewById(R.id.idLayout);
-//        AlphaAnimation animation = new AlphaAnimation(0.0f , 1.0f ) ;
-//        animation.setFillAfter(true);
-//        animation.setDuration(1200);
-////apply the animation ( fade In  or whatever you want) to your LAyout
-//        layout.startAnimation(animation);
-
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.person);

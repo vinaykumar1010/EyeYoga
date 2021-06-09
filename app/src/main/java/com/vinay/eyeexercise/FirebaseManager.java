@@ -34,9 +34,9 @@ public class FirebaseManager {
                                 Map data = document.getData();
 //                                Log.d(TAG, String.valueOf(data));
                                 String name = (String) data.get("name");
-                                //String link = (String)data.get("image");
+                                String description = (String)data.get("description");
                                 // Creating FirstDataModel class object for one link coming from db.
-                                FirstDataModel linkObj = new FirstDataModel(name);
+                                FirstDataModel linkObj = new FirstDataModel(name , description);
                                 // push this link in useful links array.
                                 firstDataModelList.add(linkObj);
                             }

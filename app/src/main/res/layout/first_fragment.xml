@@ -9,19 +9,15 @@
     tools:context="com.vinay.eyeexercise.FirstFragment">
 
 
-
-
     <ListView
         android:id="@+id/exercise_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:background="#FFFFFF"
+        android:clickable="true"
+        android:elevation="2dp"
         android:gravity="center_horizontal"
         android:textAlignment="center"
-        android:background="@drawable/curvy_layout"
-        android:elevation="2dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 

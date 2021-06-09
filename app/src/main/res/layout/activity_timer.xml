@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TimerActivity">
+
+
+    <Button
+        android:id="@+id/bt_reset"
+        android:layout_width="64dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/bt_start"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="219dp"
+        android:layout_marginRight="219dp"
+        android:layout_toEndOf="@+id/bt_start"
+        android:layout_toRightOf="@+id/bt_start"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:padding="10dp"
+        android:text="Reset"
+        android:textColor="@color/white"
+        android:textSize="13dp"
+        android:translationZ="10dp"
+        app:backgroundTint="#1589FF"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="DuplicateIds" />
+
+    <Button
+        android:id="@+id/bt_start"
+        android:layout_width="111dp"
+        android:layout_height="50dp"
+        android:layout_alignTop="@+id/et_input_min"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:clickable="true"
+        android:elevation="10dp"
+        android:focusable="true"
+        android:padding="10dp"
+        android:text="PLAY"
+        android:textColor="@color/white"
+        android:translationZ="10dp"
+        app:backgroundTint="#1589FF" />
+
+    <EditText
+        android:id="@+id/et_input_min"
+        android:layout_width="86dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_Countdown"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="160dp"
+        android:hint="Minute"
+        android:inputType="number"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textColorHint="@color/black"
+        android:visibility="gone"
+        tools:ignore="NotSibling" />
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="240dp"
+            android:layout_height="140dp"
+            android:layout_centerHorizontal="true"
+            android:elevation="8dp"
+            android:fitsSystemWindows="true"
+            android:translationX="1dp"
+            android:translationY="20dp"
+            android:translationZ="20dp"
+            app:cardBackgroundColor="#FFFFFF "
+            app:cardCornerRadius="17dp"
+            app:cardElevation="8dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="85dp"
+            tools:layout_editor_absoluteY="72dp">
+
+            <TextView
+                android:id="@+id/tv_Countdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="sans-serif-thin"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="00:00"
+                android:textAlignment="center"
+                android:textColor="#1589FF"
+                android:textSize="80dp" />
+
+
+        </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/exercise_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_start"
+        android:layout_marginTop="61dp"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/exercise_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/exercise_name"
+        android:layout_marginTop="43dp"
+        android:text="TextView" />
+
+</RelativeLayout>
