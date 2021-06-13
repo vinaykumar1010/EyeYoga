@@ -4,15 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vinay.eyeexercise.IntroActivity"
-    android:background="#ffffff"
-    >
+    android:background="#F5F5F5F5"
+    tools:context=".IntroActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/screen_viewpager"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5F5"
         app:layout_constraintBottom_toTopOf="@+id/tab_indicator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -27,22 +26,20 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="16dp"
-        android:textAlignment="center"
-        android:background="@drawable/curvy_layout"
+        android:background="@color/not_pure_white"
         android:drawableRight="@drawable/ic_arrow_forward_black_24dp"
-        android:drawableTint="@color/gradient_start_color"
+        android:drawableTint="@color/dodger_blue"
         android:text="Next"
-        android:textColor="@color/gradient_start_color"
+        android:textColor="@color/dodger_blue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_marginStart="142dp"
+        android:layout_marginLeft="62dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
@@ -54,8 +51,8 @@
 
     </com.google.android.material.tabs.TabLayout>
 
+
     <Button
-        android:visibility="invisible"
         android:id="@+id/btn_get_started"
         android:layout_width="132dp"
         android:layout_height="wrap_content"
@@ -67,13 +64,12 @@
         android:background="@drawable/btn_gradient_style"
         android:text="Get Started"
         android:textColor="#fff"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:id="@+id/tv_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -81,7 +77,9 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="Skip"
-        android:textColor="@color/gradient_start_color"
+        android:textColor="@color/dodger_blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/bt_reset"
-        android:layout_width="64dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignTop="@+id/bt_start"
         android:layout_marginStart="11dp"
@@ -22,7 +22,7 @@
         android:clickable="true"
         android:elevation="10dp"
         android:padding="10dp"
-        android:text="Reset"
+        android:text="Restart"
         android:textColor="@color/white"
         android:textSize="13dp"
         android:translationZ="10dp"
@@ -107,6 +107,7 @@
         android:layout_below="@+id/bt_start"
         android:layout_marginTop="61dp"
         android:textSize="25dp"
+        android:clickable="false"
         android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:text="TextView" />
@@ -117,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textSize="16dp"
+        android:clickable="false"
         android:textColor="@color/black"
         android:layout_below="@+id/exercise_name"
         android:layout_marginTop="43dp"

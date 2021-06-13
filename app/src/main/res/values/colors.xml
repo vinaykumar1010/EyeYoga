@@ -25,6 +25,13 @@
     <color name="intro_description_color">#656565</color>
     <color name="light_grey">#BEBEBE</color>
 
+    <color name="off_white">#d0e1e1</color>
+    <color name="focus_color">#85B2FF</color>
+    <color name="break_color">#FD8282</color>1e90ff
+    <color name="dodger_blue">#1e90ff</color>
+    <color name="not_pure_white">#F5F5F5F5</color>
+
+
 
 
 </resources>

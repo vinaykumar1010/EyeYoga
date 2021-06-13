@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -70,6 +71,7 @@ public class FirstFragment extends Fragment {
 
 
         getActivity().setTitle("Exercise");
+
         exercisesAdapter = new ExercisesAdapter(getActivity(), R.layout.exercise_adapter_link_layout, list);
 
         FirebaseManager firebaseManagerObj = new FirebaseManager();
@@ -110,7 +112,8 @@ public class FirstFragment extends Fragment {
 
         Log.d(TAG, "list is here" + String.valueOf(list));
 
-
+        Button mStartAllButton = view.findViewById(R.id.start_exercise_all);
+        startAllExercises(mStartAllButton);
         ListView mListView = view.findViewById(R.id.exercise_list);
         mListView.setAdapter(exercisesAdapter);
         Log.d(TAG, "list item is in on create view " + String.valueOf(list));
@@ -137,6 +140,19 @@ public class FirstFragment extends Fragment {
 
 //        callFirebase(mListView);
         return view;
+    }
+
+    private  void startAllExercises(Button mStartAllButton){
+        Log.d(TAG,"startAllExercises");
+        mStartAllButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG,"startAllExercises  onclick" );
+
+                // start and play all exercises serially
+                // step 1 : get position Id
+            }
+        });
     }
 
 

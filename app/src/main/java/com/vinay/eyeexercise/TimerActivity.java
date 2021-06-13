@@ -3,8 +3,7 @@ package com.vinay.eyeexercise;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -13,13 +12,11 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.VideoView;
 
 import java.util.Locale;
 
 public class TimerActivity extends AppCompatActivity {
-    private static final long START_TIME_IN_MILLIS = 30000; // 30Sec
+    private static final long START_TIME_IN_MILLIS = 31000; // 30Sec
     private TextView aTextViewCountdown;
     private TextView aEditTextMinInput;
     private Button aButtonStartPause;
@@ -51,24 +48,21 @@ public class TimerActivity extends AppCompatActivity {
         aButtonStartPause = findViewById(R.id.bt_start);
         aButtonReset = findViewById(R.id.bt_reset);
         aEditTextMinInput = findViewById(R.id.et_input_min);
-        // bombView = findViewById(R.id.virtual_view);
 
         aTextViewCountdown.setText("00:30");
         aButtonReset.setVisibility(View.INVISIBLE);
 
-//        aButtonFocus = findViewById(R.id.focus_btn);
-//        aButtonBreak = findViewById(R.id.break_btn);
-//        color = findViewById(R.id.main_layout);
+        if (Build.VERSION.SDK_INT >= 21) {
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.dodger_blue));
+        }
 
         addListenerOnStartButtonAndHandleAction();
         addListenerOnResetButtonAndHandleAction();
-//        clickFocus();
-//        clickBreak();
-        clickedExercise();
-
+        getExerciseData();
     }
 
-    private void clickedExercise() {
+    private void getExerciseData() {
         Log.d(TAG, " clicked exercise is called ");
         Intent intent = getIntent();
         Log.d(TAG, "intent value :" + intent);
@@ -96,27 +90,12 @@ public class TimerActivity extends AppCompatActivity {
         });
     }
 
-//    private void takeInputWhileStart() {
-//        // 1. Get user input minutes from minutes edit text
-//        String input = aEditTextMinInput.getText().toString();
-//        Log.d("TIMER", "input: " + input);
-//        if (input.isEmpty()) {
-//            String remainingMinute = formatTime(aTimeLeftInMillis);
-//            aTextViewCountdown.setText(remainingMinute);
-////            startTimer(aTimeLeftInMillis, true);
-//        } else if (Integer.parseInt(input) > 0 && Integer.parseInt(input) <= 60) {
-//            // 2. Convert user input minutes in millisecond. 1 min = 1 * 60 * 1000 milliseconds = 60000 milliseconds
-//            long timerMilliseconds = Long.parseLong(String.valueOf(input)) * 60000;
-//            setMinutesInCircle(input);
-//            startTimer(timerMilliseconds, true);
-//        } else {
-//            Toast.makeText(TimerActivity.this, "Enter time between 1 to 60", Toast.LENGTH_SHORT).show();
-//            return;
-//        }
-//    }
-
     private void startTimer(long millisecond) {
         //  cancelTimer();
+       if(mCountDownTimer!=null){
+           mCountDownTimer.cancel();
+       }
+
         // constructor obj dega ,  2 fun ki defination b batao
         mCountDownTimer = new CountDownTimer(millisecond, 1000) {
             @Override
@@ -163,27 +142,20 @@ public class TimerActivity extends AppCompatActivity {
         return formattedMinutes;
     }
 
-    private void setMinutesInCircle(String minutes) {
-        int min = Integer.parseInt(minutes);
-        // 2. Format minutes so that it looks like 15:00 instead of just 15
-        String formattedTime = String.format(Locale.getDefault(), "%02d:%02d", min, 0);
-        // 3. Set this value in timer circle
-        aTextViewCountdown.setText(formattedTime);
-    }
 
     private void addListenerOnResetButtonAndHandleAction() {
         aButtonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 aTimeLeftInMillis = START_TIME_IN_MILLIS;
                 aTextViewCountdown.setText("00:30");
-                aEditTextMinInput.setVisibility(View.INVISIBLE);
-                aEditTextMinInput.setText("");
+//                aEditTextMinInput.setVisibility(View.INVISIBLE);
+//                aEditTextMinInput.setText("");
                 // aButtonStartPause.setBackgroundResource(R.drawable.ic_play_circle_outline);
                 aButtonStartPause.setText("PLAY");
                 mCountDownTimer.cancel();
                 aTimerRunning = false;
+                startTimer(START_TIME_IN_MILLIS);
             }
         });
     }

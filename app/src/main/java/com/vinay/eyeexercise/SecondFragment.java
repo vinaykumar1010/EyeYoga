@@ -1,21 +1,34 @@
 package com.vinay.eyeexercise;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +38,10 @@ import java.io.File;
 public class SecondFragment extends Fragment {
     WebView weblook;
     Button button;
-
+    private String TAG = "secondFragmenttag";
+    private WebView web;
+    boolean click = true;
+    PopupWindow popUp;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -66,50 +82,84 @@ public class SecondFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageRef = storage.getReference();
-        StorageReference imagesRef = storageRef.child("images/bestFruit.html");
-//        File localFile = File.createTempFile("images", "jpg");
-//
-//        imagesRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-//            @Override
-//            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-//                taskSnapshot.getTask().getResult();
-//            }
-//        })
-
-        // islandRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-        //            @Override
-        //            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-        //                // Local temp file has been created
-        //            }
-        //        }).addOnFailureListener(new OnFailureListener() {
-        //            @Override
-        //            public void onFailure(@NonNull Exception exception) {
-        //                // Handle any errors
-        //            }
-        //        });
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.second_fragment, container, false);
 
-        final String descriptionUsingWebView = "<h2>Display HTML code in Android using WebView</h2><p>In this tutorial, we show you how to display HTML code in Android using WebView</p>";
+        LinearLayout layout1 = view.findViewById(R.id.layout1);
+        LinearLayout layout2 = view.findViewById(R.id.layout2);
+        LinearLayout layout3 = view.findViewById(R.id.layout3);
+        LinearLayout layout4 = view.findViewById(R.id.layout4);
 
-//        Button location = (Button) view.findViewById(R.id.btnWebView);
-//        WebView webView = view.findViewById(R.id.webView);
-//
-//        location.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                webView.loadDataWithBaseURL(null, descriptionUsingWebView, "text/html", "utf-8", null);
-//            }
-//        });
-
+        clickLayout1(layout1);
+        clickLayout2(layout2);
+        clickLayout3(layout3);
+        clickLayout4(layout4);
 
         return view;
     }
+
+    private void clickLayout1(LinearLayout layout1){
+        layout1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), Second_One_Activity.class);
+                FirebaseManager firebaseManagerObj = new FirebaseManager();
+                firebaseManagerObj.storageData1(new OnGetHealthTipListner() {
+                    @Override
+                    public void onFailure() {
+                        Log.e(TAG, "firebase request to fetch exercises failed.");
+
+                    }
+
+                    @Override
+                    public void onSuccess(String url) {
+                        getActivity().startActivity(intent);
+                       String  list = url;
+                       intent.putExtra("KEY", list);
+                        Log.d(TAG, "Exercises: " + list);
+                    }
+
+                });
+
+            }
+        });
+    }
+    private void clickLayout2(LinearLayout layout2){
+        layout2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), Second_One_Activity.class);
+
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+    private void clickLayout3(LinearLayout layout3){
+        layout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), Second_One_Activity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+    private void clickLayout4(LinearLayout layout4){
+        layout4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), Second_One_Activity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+
+
 
 }

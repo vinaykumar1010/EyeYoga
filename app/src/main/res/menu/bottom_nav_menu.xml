@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/person"
+        android:id="@+id/exercise"
         android:title="Exercise"
         android:icon="@drawable/ic_exercise_logo" />
     <item
-        android:id="@+id/home"
+        android:id="@+id/health_tips"
         android:title="Health Tips"
         android:icon="@drawable/ic_health_logo" />
     <item

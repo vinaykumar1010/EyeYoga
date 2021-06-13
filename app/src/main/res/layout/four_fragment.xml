@@ -12,13 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:clickable="true"
+        android:clickable="false"
         android:gravity="start"
         android:lines="1"
-        android:text="Night Mode"
+        android:text="GENERAL SETTING"
         android:textAlignment="viewStart"
-        android:textColor="@color/black"
+        android:textColor="@color/dodger_blue"
         android:textSize="22dp" />
 
     <View
@@ -26,11 +25,12 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="#BEBEBE" />
+
     <TextView
+        android:id="@+id/set_time_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:clickable="true"
         android:gravity="start"
         android:lines="1"
@@ -44,15 +44,77 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="#BEBEBE" />
+
+    <TextView
+        android:id="@+id/remainder_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:lines="1"
+        android:text="Reminder"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#BEBEBE" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
-        android:clickable="true"
+        android:clickable="false"
         android:gravity="start"
         android:lines="1"
-        android:text="@string/text_notification"
+        android:text="SUPPORT US"
+        android:textAlignment="viewStart"
+        android:textColor="@color/dodger_blue"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#BEBEBE" />
+
+    <TextView
+        android:id="@+id/share_with_friends_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:lines="1"
+        android:text="Share With friends"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black"
+        android:textSize="22dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="#BEBEBE" />
+
+    <TextView
+        android:id="@+id/rate_us_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:clickable="true"
+        android:drawablePadding="20dp"
+        android:gravity="start"
+        android:lines="1"
+        android:text="Rate us"
         android:textAlignment="viewStart"
         android:textColor="@color/black"
         android:textSize="22sp" />
@@ -62,12 +124,14 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="#BEBEBE" />
+
     <TextView
+        android:id="@+id/feedback_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:clickable="true"
+        android:drawablePadding="20dp"
         android:gravity="start"
         android:lines="1"
         android:text="Feedback"
@@ -80,12 +144,14 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="#BEBEBE" />
+
     <TextView
+        android:id="@+id/about_us_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
         android:clickable="true"
+        android:drawablePadding="20dp"
         android:gravity="start"
         android:lines="1"
         android:text="About Us"
@@ -98,21 +164,21 @@
         android:layout_height="1dp"
         android:layout_margin="10dp"
         android:background="#BEBEBE" />
+
     <TextView
+        android:id="@+id/privacy_policy_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:clickable="true"
+        android:drawableLeft="@drawable/privacy_policy_png"
+        android:drawablePadding="20dp"
         android:gravity="start"
         android:lines="1"
-        android:text="More Apps"
-        android:layout_marginBottom="10dp"
-        android:textAlignment="viewStart"
+        android:text="Privacy policy"
         android:textColor="@color/black"
         android:textSize="22dp" />
-
-
 
 
 </LinearLayout>

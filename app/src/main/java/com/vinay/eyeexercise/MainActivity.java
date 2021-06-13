@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String TAG ="mainActivitye";
     final Fragment fragment1 = new FirstFragment();
     final Fragment fragment2 = new SecondFragment();
     final Fragment fragment3 = new ThirdFragment();
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setSelectedItemId(R.id.person);
+        navigation.setSelectedItemId(R.id.exercise);
         navigation.setOnNavigationItemSelectedListener(navListener);
 
         fm.beginTransaction().add(R.id.main_container, fragment4, "2").hide(fragment4).commit();
@@ -33,20 +34,22 @@ public class MainActivity extends AppCompatActivity {
         fm.beginTransaction().add(R.id.main_container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.main_container, fragment1, "1").commit();
     }
-
+   private void startAllExercises(){
+        Log.d(TAG , "startAllExercises ");
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
-                        case R.id.person:
+                        case R.id.exercise:
                             fm.beginTransaction().hide(active).show(fragment1).commit();
                             Log.d("click", "person is clicked");
                             // Toast.makeText(new MainActivity(), "This is my Toast message!", Toast.LENGTH_LONG).show();
                             active = fragment1;
                             return true;
 
-                        case R.id.home:
+                        case R.id.health_tips:
                             fm.beginTransaction().hide(active).show(fragment2).commit();
                             active = fragment2;
                             return true;
