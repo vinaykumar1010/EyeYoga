@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".Second_One_Activity"></activity>
+
+        <activity android:name=".PrivacyPolicy" />
+        <activity android:name=".Second_One_Activity" />
         <activity android:name=".TimerActivity" />
         <activity android:name=".MainActivity" />
         <activity

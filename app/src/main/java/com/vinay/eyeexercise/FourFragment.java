@@ -26,9 +26,11 @@ public class FourFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
     public FourFragment() {
         // Required empty public constructor
     }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -53,24 +55,55 @@ public class FourFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
 
-
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.four_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.four_fragment, container, false);
 
         TextView privacyPolicy = (TextView) rootView.findViewById(R.id.privacy_policy_tv);
+        TextView feedback = (TextView) rootView.findViewById(R.id.feedback_tv);
+        TextView rateNow = (TextView) rootView.findViewById(R.id.rate_us_tv);
+
+        clickPrivacyPolicy(privacyPolicy);
+        clickFeedback(feedback);
+        return rootView;
+    }
+
+    private void clickPrivacyPolicy(TextView privacyPolicy) {
         privacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                transaction.replace(R.id.frame_container, someFragment);
-                transaction.addToBackStack(null);
-                transaction.commit();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), PrivacyPolicy.class);
+
+                intent.putExtra("KEY" , "variable");
+                getActivity().startActivity(intent);
+//                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+//                transaction.replace(R.id.frame_container, Second_One_Activity.class);
+//                transaction.addToBackStack(null);
+//                transaction.commit();
+
             }
         });
-        return rootView;
     }
+
+    private  void clickFeedback(TextView feedback) {
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                String[] recipients={"feedback.vinappstudio@gmail.com"};
+                intent.putExtra(Intent.EXTRA_EMAIL, recipients);
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
+                intent.putExtra(Intent.EXTRA_TEXT,"Body of the content here...");
+                intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                intent.setType("text/html");
+                intent.setPackage("com.google.android.gm");
+                startActivity(Intent.createChooser(intent, "Send mail"));
+            }
+        });
+
+    }
+
 }

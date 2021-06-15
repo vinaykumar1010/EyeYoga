@@ -107,24 +107,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), Second_One_Activity.class);
-                FirebaseManager firebaseManagerObj = new FirebaseManager();
-                firebaseManagerObj.storageData1(new OnGetHealthTipListner() {
-                    @Override
-                    public void onFailure() {
-                        Log.e(TAG, "firebase request to fetch exercises failed.");
-
-                    }
-
-                    @Override
-                    public void onSuccess(String url) {
-                        getActivity().startActivity(intent);
-                       String  list = url;
-                       intent.putExtra("KEY", list);
-                        Log.d(TAG, "Exercises: " + list);
-                    }
-
-                });
-
+                getActivity().startActivity(intent);
             }
         });
     }

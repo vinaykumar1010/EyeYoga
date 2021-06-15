@@ -59,15 +59,16 @@ public class FirebaseManager {
                 });
     }
 
-    public void storageData1(OnGetHealthTipListner url) {
+
+    public void storageData1(OnGetHealthTipListner getHealthTipListner) {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
         //  firebaseFetchHtml1(webView,storageRef);
         storageRef.child("images/bestFruit.html").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-
                 String url = uri.toString();
+                getHealthTipListner.onSuccess(url);
 
                 // if success then without directly send data
                 // we call function here (of that activity where we are sending data)
