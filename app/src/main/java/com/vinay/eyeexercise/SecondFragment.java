@@ -1,17 +1,15 @@
 package com.vinay.eyeexercise;
 
-import android.content.DialogInterface;
+import android.app.ActionBar;
+import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,35 +18,22 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
+import java.io.Serializable;
 
-import java.io.File;
-import java.net.URL;
-import java.util.ArrayList;
+import Health.FragmentToActivity;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SecondFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SecondFragment extends Fragment {
-    WebView weblook;
-    Button button;
+public class SecondFragment extends Fragment implements Serializable {
     private String TAG = "secondFragmenttag";
     private WebView web;
     boolean click = true;
-    PopupWindow popUp;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private FragmentToActivity mCallback;
 
     public SecondFragment() {
         // Required empty public constructor
@@ -66,8 +51,6 @@ public class SecondFragment extends Fragment {
     public static SecondFragment newInstance(String param1, String param2) {
         SecondFragment fragment = new SecondFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -77,16 +60,22 @@ public class SecondFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
+//        public void onResume(){
+//            super.onResume();
+//
+//            // Set title bar
+//            ((MainActivity) getActivity())
+//                    .setActionBarTitle("Your title");
+//
+//        }
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.second_fragment, container, false);
+// Change Action Bar name
+        //((MainActivity) getActivity()).getSupportActionBar().setTitle("Health");
 
         LinearLayout layout1 = view.findViewById(R.id.layout1);
         LinearLayout layout2 = view.findViewById(R.id.layout2);
@@ -101,28 +90,57 @@ public class SecondFragment extends Fragment {
         return view;
     }
 
-    private void clickLayout1(LinearLayout layout1){
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        try {
+//            mCallback = (FragmentToActivity) context;
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException(context.toString()
+//                    + " must implement FragmentToActivity");
+//        }
+//    }
+
+
+//    @Override
+//    public void onDetach() {
+//        mCallback = null;
+//        super.onDetach();
+//    }
+
+    private void clickLayout1(LinearLayout layout1) {
         layout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), Second_One_Activity.class);
+//                intent.putExtra("")
+//                sendData("Andrews");
                 getActivity().startActivity(intent);
+                // show progress bar
             }
         });
     }
-    private void clickLayout2(LinearLayout layout2){
+
+    private void sendData(String comm)
+    {
+        Log.i(Constants.TAG, "senData called");
+        mCallback.communicate(comm);
+    }
+
+    private void clickLayout2(LinearLayout layout2) {
         layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), Second_One_Activity.class);
-
+              //  intent.putExtra("layout" , )
                 getActivity().startActivity(intent);
             }
         });
     }
-    private void clickLayout3(LinearLayout layout3){
+
+    private void clickLayout3(LinearLayout layout3) {
         layout3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +150,8 @@ public class SecondFragment extends Fragment {
             }
         });
     }
-    private void clickLayout4(LinearLayout layout4){
+
+    private void clickLayout4(LinearLayout layout4) {
         layout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +161,6 @@ public class SecondFragment extends Fragment {
             }
         });
     }
-
 
 
 }

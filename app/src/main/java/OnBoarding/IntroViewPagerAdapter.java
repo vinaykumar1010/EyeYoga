@@ -1,4 +1,4 @@
-package com.vinay.eyeexercise;
+package OnBoarding;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.vinay.eyeexercise.R;
+import OnBoarding.ScreenItem;
 
 import java.util.List;
 

@@ -1,5 +1,6 @@
-package com.vinay.eyeexercise;
+package Exercise;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,7 +14,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.vinay.eyeexercise.R;
+
 import java.util.Locale;
+
+import Exercise.FirstDataModel;
 
 public class TimerActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 31000; // 30Sec
@@ -34,13 +39,25 @@ public class TimerActivity extends AppCompatActivity {
     private String TAG = "timebb";
     private TextView aExerciseName;
     private TextView aExerciseDescription;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
 
-        setTitle("Timer");
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.toolbar_title_layout);
+        textView = findViewById(R.id.toolbar);
+        textView.setText("Timer");
+        if (Build.VERSION.SDK_INT >= 21) {
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.dodger_blue));
+        }
+
+
+
+
         aExerciseName = findViewById(R.id.exercise_name);
         aExerciseDescription = findViewById(R.id.exercise_description);
 
@@ -52,10 +69,6 @@ public class TimerActivity extends AppCompatActivity {
         aTextViewCountdown.setText("00:30");
         aButtonReset.setVisibility(View.INVISIBLE);
 
-        if (Build.VERSION.SDK_INT >= 21) {
-            window = this.getWindow();
-            window.setStatusBarColor(this.getResources().getColor(R.color.dodger_blue));
-        }
 
         addListenerOnStartButtonAndHandleAction();
         addListenerOnResetButtonAndHandleAction();

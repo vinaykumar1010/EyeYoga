@@ -1,8 +1,7 @@
-package com.vinay.eyeexercise;
+package OnBoarding;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -15,8 +14,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.vinay.eyeexercise.R;
 import com.google.android.material.tabs.TabLayout;
+import com.vinay.eyeexercise.MainActivity;
+import com.vinay.eyeexercise.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +59,7 @@ public class IntroActivity extends AppCompatActivity {
         final List<ScreenItem> mList = new ArrayList<>();
         mList.add(new ScreenItem("Eye Exercise", "Simple yet Effective Exercises for Improving Your Eyesight", R.drawable.exercise));
         mList.add(new ScreenItem("Health Tips", "Good vision helps you perform well , That’s why it’s important to  keep your eyesight at its best", R.drawable.health));
-        mList.add(new ScreenItem("Track Progress", " Track Everyday progress with Exercise you do Daily", R.drawable.progress_bar));
+        mList.add(new ScreenItem("Track Progress", " Track Everyday progress with Exercise you do Daily", R.drawable.progress));
 
         // setup viewpager
         introViewPagerAdapter = new IntroViewPagerAdapter(this, mList);

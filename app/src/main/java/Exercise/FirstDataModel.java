@@ -1,4 +1,4 @@
-package com.vinay.eyeexercise;
+package Exercise;
 
 import java.io.Serializable;
 

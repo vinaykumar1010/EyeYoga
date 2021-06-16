@@ -1,4 +1,4 @@
-package com.vinay.eyeexercise;
+package OnBoarding;
 
 public class ScreenItem {
 

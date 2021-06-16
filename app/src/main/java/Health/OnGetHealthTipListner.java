@@ -1,4 +1,4 @@
-package com.vinay.eyeexercise;
+package Health;
 
 public interface OnGetHealthTipListner {
     void onFailure();

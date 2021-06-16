@@ -13,4 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="ClickableView">
+        <item name="colorControlHighlight">@color/focus_color</item>
+        <item name="android:background">?selectableItemBackground</item>
+    </style>
 </resources>

@@ -1,8 +1,10 @@
-package com.vinay.eyeexercise;
+package Setting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.vinay.eyeexercise.R;
 
 public class PrivacyPolicy extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.vinay.eyeexercise;
+package Exercise;
 
 import android.net.Uri;
 import android.util.Log;
@@ -17,6 +17,8 @@ import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 import java.util.Map;
+
+import Health.OnGetHealthTipListner;
 
 public class FirebaseManager {
 
@@ -60,7 +62,7 @@ public class FirebaseManager {
     }
 
 
-    public void storageData1(OnGetHealthTipListner getHealthTipListner) {
+    public void storageData1(OnGetHealthTipListner getHealthTipListener) {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         StorageReference storageRef = storage.getReference();
         //  firebaseFetchHtml1(webView,storageRef);
@@ -68,7 +70,7 @@ public class FirebaseManager {
             @Override
             public void onSuccess(Uri uri) {
                 String url = uri.toString();
-                getHealthTipListner.onSuccess(url);
+                getHealthTipListener.onSuccess(url);
 
                 // if success then without directly send data
                 // we call function here (of that activity where we are sending data)

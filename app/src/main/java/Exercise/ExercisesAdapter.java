@@ -1,16 +1,16 @@
-package com.vinay.eyeexercise;
+package Exercise;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.vinay.eyeexercise.R;
 
 import java.util.ArrayList;
 

@@ -1,22 +1,24 @@
-package com.vinay.eyeexercise;
+package Exercise;
 
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
+
+import com.vinay.eyeexercise.MainActivity;
+import com.vinay.eyeexercise.R;
+import com.vinay.eyeexercise.SecondFragment;
 
 import java.util.ArrayList;
 
@@ -69,8 +71,9 @@ public class FirstFragment extends Fragment {
         Log.d(TAG, "on create is called");
         super.onCreate(savedInstanceState);
 
+//     set action bar name
+      // getActivity().setTitle("Exercise");
 
-        getActivity().setTitle("Exercise");
 
         exercisesAdapter = new ExercisesAdapter(getActivity(), R.layout.exercise_adapter_link_layout, list);
 
@@ -98,10 +101,17 @@ public class FirstFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Log.d(TAG, "on create view is called ");
+
+      //  getActivity().setTitle("Exercise");
+
+
+
 
         if (view == null) {
             view = inflater.inflate(R.layout.first_fragment, container, false);
