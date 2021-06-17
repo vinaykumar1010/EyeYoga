@@ -5,156 +5,183 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vinay.eyeexercise.SecondFragment">
+    tools:context="com.vinay.eyeexercise.SecondFragment"
+    android:orientation="vertical"
+    android:id="@+id/layoutII">
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:background="#F5F5FF"
+        android:clipToPadding="false"
         android:gravity="center"
-        android:id="@+id/layoutII">
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20dp"
 
-        <TextView
-            android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:id="@+id/cardViegw_1"
+            app:cardCornerRadius="17dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Health Tips"
-            android:textSize="20dp"
-            android:fontFamily="sans-serif-light"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:layout_marginBottom="30dp"
-            tools:ignore="RtlCompat" />
-
-        <LinearLayout
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
+            android:layout_height="130dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:id="@+id/layougt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/large"
                 android:clickable="true"
-                android:id="@+id/cardView_1"
-                app:cardCornerRadius="24dp"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp">
-                <LinearLayout
-                    android:id="@+id/layout1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/large"
-                    android:clickable="true"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Pandemic Resources"
-                       android:textColor="@color/white" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pandemic Resources"
+                    android:textColor="@color/white" />
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:id="@+id/bankjcardId"
-                app:cardCornerRadius="24dp"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp">
-                <LinearLayout
-                    android:id="@+id/layout2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/small"
-                    android:clickable="true"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Pandemic Resources"
-                       android:textColor="@color/white" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:id="@+id/bankchardId"
-                app:cardCornerRadius="24dp"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp">
-                <LinearLayout
-                    android:id="@+id/layout3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/small"
-                    android:clickable="true"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Pandemic Resources"
-                        android:textColor="@color/white" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:foreground="?android:attr/selectableItemBackground"
-                android:clickable="true"
-                android:id="@+id/bankcardId"
-                app:cardCornerRadius="24dp"
-                android:layout_width="160dp"
-                android:layout_height="190dp"
-                android:layout_margin="10dp">
-                <LinearLayout
-                    android:id="@+id/layout4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/small"
-                    android:clickable="true"
-                    android:elevation="2dp"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:text="Pandemic Resources"
-                       android:textColor="@color/white" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </LinearLayout>
-
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:id="@+id/cardView_1"
+            app:cardCornerRadius="24dp"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:id="@+id/layout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/large"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pandemic Resources"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:id="@+id/bankjcardId"
+            app:cardCornerRadius="24dp"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:id="@+id/layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/small"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pandemic Resources"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bankchardId"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/small"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pandemic Resources"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bankcardId"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="24dp">
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/small"
+                android:clickable="true"
+                android:elevation="2dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Pandemic Resources"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
 </LinearLayout>
+

@@ -98,6 +98,62 @@ public class FirebaseManager {
             }
         });
     }
+    public void storageData2(OnGetHealthTipListner getHealthTipListener) {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        //  firebaseFetchHtml1(webView,storageRef);
+        storageRef.child("images/bestFruit.html").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                getHealthTipListener.onSuccess(url);
 
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d(TAG, "fetching html from firebase Failed");
+                // Handle any errors
+            }
+        });
+    }
+    public void storageData3(OnGetHealthTipListner getHealthTipListener) {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        //  firebaseFetchHtml1(webView,storageRef);
+        storageRef.child("images/bestFruit.html").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                getHealthTipListener.onSuccess(url);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d(TAG, "fetching html from firebase Failed");
+                // Handle any errors
+            }
+        });
+    }
+    public void storageData4(OnGetHealthTipListner getHealthTipListener) {
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageRef = storage.getReference();
+        //  firebaseFetchHtml1(webView,storageRef);
+        storageRef.child("images/bestFruit.html").getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url = uri.toString();
+                getHealthTipListener.onSuccess(url);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                Log.d(TAG, "fetching html from firebase Failed");
+                // Handle any errors
+            }
+        });
+    }
 
 }

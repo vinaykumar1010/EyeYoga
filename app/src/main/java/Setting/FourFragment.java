@@ -1,6 +1,8 @@
 package Setting;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vinay.eyeexercise.R;
 
@@ -65,7 +68,13 @@ public class FourFragment extends Fragment {
         TextView privacyPolicy = (TextView) rootView.findViewById(R.id.privacy_policy_tv);
         TextView feedback = (TextView) rootView.findViewById(R.id.feedback_tv);
         TextView rateNow = (TextView) rootView.findViewById(R.id.rate_us_tv);
+        TextView about = (TextView) rootView.findViewById(R.id.about_us_tv);
+        TextView share = (TextView) rootView.findViewById(R.id.share_with_friends_tv);
 
+
+        clickShareWithFriends(share);
+        clickRateUs(rateNow);
+        clickAboutUs(about);
         clickPrivacyPolicy(privacyPolicy);
         clickFeedback(feedback);
         return rootView;
@@ -78,8 +87,9 @@ public class FourFragment extends Fragment {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), PrivacyPolicy.class);
 
-                intent.putExtra("KEY" , "variable");
+                intent.putExtra("KEY", "variable");
                 getActivity().startActivity(intent);
+
 //                FragmentTransaction transaction = getFragmentManager().beginTransaction();
 //                transaction.replace(R.id.frame_container, Second_One_Activity.class);
 //                transaction.addToBackStack(null);
@@ -89,22 +99,69 @@ public class FourFragment extends Fragment {
         });
     }
 
-    private  void clickFeedback(TextView feedback) {
+    private void clickFeedback(TextView feedback) {
         feedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(Intent.ACTION_SEND);
-                String[] recipients={"feedback.vinappstudio@gmail.com"};
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                String[] recipients = {"feedback.vinappstudio@gmail.com"};
                 intent.putExtra(Intent.EXTRA_EMAIL, recipients);
-                intent.putExtra(Intent.EXTRA_SUBJECT,"Subject text here...");
-                intent.putExtra(Intent.EXTRA_TEXT,"Body of the content here...");
-                intent.putExtra(Intent.EXTRA_CC,"mailcc@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject text here...");
+                intent.putExtra(Intent.EXTRA_TEXT, "Body of the content here...");
+                intent.putExtra(Intent.EXTRA_CC, "mailcc@gmail.com");
                 intent.setType("text/html");
                 intent.setPackage("com.google.android.gm");
                 startActivity(Intent.createChooser(intent, "Send mail"));
             }
         });
 
+    }
+
+    private void clickAboutUs(TextView about) {
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), AboutUs.class);
+
+                // intent.putExtra("KEY" , "variable");
+                getActivity().startActivity(intent);
+            }
+        });
+    }
+
+    private void clickRateUs(TextView rateNow) {
+        rateNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "Coming Soon",
+                        Toast.LENGTH_LONG).show();
+                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + EYE_EXERCISES)));
+
+
+//                try{
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+getPackageName())));
+//                }
+//                catch (ActivityNotFoundException e){
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName())));
+//                }
+
+            }
+        });
+    }
+
+    private void clickShareWithFriends(TextView share) {
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "YOUR_LINK");
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+            }
+        });
     }
 
 }

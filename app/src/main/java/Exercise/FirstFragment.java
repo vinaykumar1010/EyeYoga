@@ -122,8 +122,8 @@ public class FirstFragment extends Fragment {
 
         Log.d(TAG, "list is here" + String.valueOf(list));
 
-        Button mStartAllButton = view.findViewById(R.id.start_exercise_all);
-        startAllExercises(mStartAllButton);
+        // Button mStartAllButton = view.findViewById(R.id.start_exercise_all);
+       // startAllExercises(mStartAllButton);
         ListView mListView = view.findViewById(R.id.exercise_list);
         mListView.setAdapter(exercisesAdapter);
         Log.d(TAG, "list item is in on create view " + String.valueOf(list));

@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-
+        <activity android:name="Setting.AboutUs"></activity>
+        <activity android:name=".Health_Layout1" />
+        <activity android:name=".Health_Layout4" />
+        <activity android:name=".Health_Layout3" />
+        <activity android:name=".Health_Layout2" />
         <activity android:name="Setting.PrivacyPolicy" />
-        <activity
-            android:name=".Second_One_Activity"
-            android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name="Exercise.TimerActivity" />
         <activity android:name=".MainActivity" />
         <activity
@@ -25,7 +26,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

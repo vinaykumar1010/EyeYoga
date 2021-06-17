@@ -1,22 +1,15 @@
 package com.vinay.eyeexercise;
 
-import android.app.ActionBar;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 
 import java.io.Serializable;
 
@@ -60,14 +53,7 @@ public class SecondFragment extends Fragment implements Serializable {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-//        public void onResume(){
-//            super.onResume();
-//
-//            // Set title bar
-//            ((MainActivity) getActivity())
-//                    .setActionBarTitle("Your title");
-//
-//        }
+
     }
 
 
@@ -113,27 +99,26 @@ public class SecondFragment extends Fragment implements Serializable {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), Second_One_Activity.class);
-//                intent.putExtra("")
-//                sendData("Andrews");
+                intent.setClass(getActivity(), Health_Layout1.class);
+
                 getActivity().startActivity(intent);
                 // show progress bar
             }
         });
     }
-
-    private void sendData(String comm)
-    {
-        Log.i(Constants.TAG, "senData called");
-        mCallback.communicate(comm);
-    }
+//
+//    private void sendData(String comm)
+//    {
+//        Log.i(Constants.TAG, "senData called");
+//        mCallback.communicate(comm);
+//    }
 
     private void clickLayout2(LinearLayout layout2) {
         layout2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), Second_One_Activity.class);
+                intent.setClass(getActivity(), Health_Layout2.class);
               //  intent.putExtra("layout" , )
                 getActivity().startActivity(intent);
             }
@@ -145,7 +130,7 @@ public class SecondFragment extends Fragment implements Serializable {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), Second_One_Activity.class);
+                intent.setClass(getActivity(), Health_Layout3.class);
                 getActivity().startActivity(intent);
             }
         });
@@ -156,7 +141,7 @@ public class SecondFragment extends Fragment implements Serializable {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(getActivity(), Second_One_Activity.class);
+                intent.setClass(getActivity(), Health_Layout4.class);
                 getActivity().startActivity(intent);
             }
         });
