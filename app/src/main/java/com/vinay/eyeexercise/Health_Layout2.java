@@ -3,9 +3,11 @@ package com.vinay.eyeexercise;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,7 +19,7 @@ public class Health_Layout2 extends AppCompatActivity {
     private  String newString;
     private  String  receivingString;
     private ProgressBar progressbar_view ;
-
+    Window window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +30,22 @@ public class Health_Layout2 extends AppCompatActivity {
         progressbar_view = findViewById(R.id.progressBar);
         progressbar_view.setVisibility(View.VISIBLE);
 
+        if (Build.VERSION.SDK_INT >= 21) {
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.white));
+        }
+
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar_title_layout);
         TextView textView = findViewById(R.id.toolbar);
         textView.setText("Food");
         //TODO here get the string stored in the string variable and do
 
+        progressbar_view.setVisibility(View.VISIBLE);
+        webView.setVisibility(View.INVISIBLE);
         fetchDataFromFirebase(webView);
 
-        progressbar_view.setVisibility(View.VISIBLE);
+
         // TODO: show progress bar
     }
 
@@ -51,9 +60,10 @@ public class Health_Layout2 extends AppCompatActivity {
             @Override
             public void onSuccess(String url) {
                 // TODO: hide progress bar
-                progressbar_view.setVisibility(View.GONE);
                 String html1 = url;
                 Log.i(Constants.TAG, "Second_One_Activity : onSuccess url: " + url);
+                progressbar_view.setVisibility(View.INVISIBLE);
+                webView.setVisibility(View.VISIBLE);
 
                 webView.loadUrl(url);
 

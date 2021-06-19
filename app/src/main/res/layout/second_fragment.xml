@@ -71,10 +71,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@color/white"
+                    android:background="@drawable/curvy_layout"
                     android:paddingHorizontal="5dp"
                     android:text="Nutrition"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -106,8 +106,8 @@
                     android:layout_marginTop="10dp"
                     android:paddingHorizontal="5dp"
                     android:text="Food"
-                    android:textSize="20dp"
-                    android:background="@color/white"
+                    android:textSize="15dp"
+                    android:background="@drawable/curvy_layout"
                     android:textColor="@color/black" />
 
             </LinearLayout>
@@ -143,16 +143,16 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="115dp"
-                    android:layout_height="49dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:background="@color/white"
+                    android:background="@drawable/curvy_layout"
                     android:gravity="center_horizontal"
-                    android:paddingHorizontal="5dp"
+                    android:paddingHorizontal="3dp"
                     android:text="Home Remedies"
                     android:textAlignment="center"
                     android:textColor="@color/black"
-                    android:textSize="19dp" />
+                    android:textSize="15dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -180,10 +180,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:paddingHorizontal="5dp"
+                    android:paddingHorizontal="3dp"
                     android:text="Yoga"
-                    android:textSize="20dp"
-                    android:background="@color/white"
+                    android:textSize="15dp"
+                    android:background="@drawable/curvy_layout"
                     android:textColor="@color/black" />
 
             </LinearLayout>

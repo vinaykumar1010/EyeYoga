@@ -3,9 +3,11 @@ package com.vinay.eyeexercise;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,12 +19,16 @@ public class Health_Layout4 extends AppCompatActivity {
     private  String newString;
     private  String  receivingString;
     private ProgressBar progressbar_view ;
-
+    Window window;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout4);
 
+        if (Build.VERSION.SDK_INT >= 21) {
+            window = this.getWindow();
+            window.setStatusBarColor(this.getResources().getColor(R.color.white));
+        }
 
         WebView webView = findViewById(R.id.webViewHtml);
         progressbar_view = findViewById(R.id.progressBar);
@@ -34,9 +40,11 @@ public class Health_Layout4 extends AppCompatActivity {
         textView.setText("Yoga");
         //TODO here get the string stored in the string variable and do
 
+        progressbar_view.setVisibility(View.VISIBLE);
+        webView.setVisibility(View.INVISIBLE);
         fetchDataFromFirebase(webView);
 
-        progressbar_view.setVisibility(View.VISIBLE);
+
         // TODO: show progress bar
     }
 
@@ -51,9 +59,10 @@ public class Health_Layout4 extends AppCompatActivity {
             @Override
             public void onSuccess(String url) {
                 // TODO: hide progress bar
-                progressbar_view.setVisibility(View.GONE);
                 String html1 = url;
                 Log.i(Constants.TAG, "Second_One_Activity : onSuccess url: " + url);
+                progressbar_view.setVisibility(View.INVISIBLE);
+                webView.setVisibility(View.VISIBLE);
 
                 webView.loadUrl(url);
 
