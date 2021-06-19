@@ -70,8 +70,9 @@ public class FourFragment extends Fragment {
         TextView rateNow = (TextView) rootView.findViewById(R.id.rate_us_tv);
         TextView about = (TextView) rootView.findViewById(R.id.about_us_tv);
         TextView share = (TextView) rootView.findViewById(R.id.share_with_friends_tv);
+        TextView remainder = (TextView) rootView.findViewById(R.id.remainder_tv);
 
-
+        clickRemainder(remainder);
         clickShareWithFriends(share);
         clickRateUs(rateNow);
         clickAboutUs(about);
@@ -160,6 +161,16 @@ public class FourFragment extends Fragment {
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "YOUR_LINK");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
+            }
+        });
+    }
+
+    private  void clickRemainder(TextView remainder){
+        remainder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "Coming Soon",
+                        Toast.LENGTH_LONG).show();
             }
         });
     }

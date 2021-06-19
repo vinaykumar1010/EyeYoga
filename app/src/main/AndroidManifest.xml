@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name="Setting.AboutUs"></activity>
+        <activity android:name=".StartExercise"></activity>
+        <activity android:name="Setting.AboutUs" />
         <activity android:name=".Health_Layout1" />
         <activity android:name=".Health_Layout4" />
         <activity android:name=".Health_Layout3" />

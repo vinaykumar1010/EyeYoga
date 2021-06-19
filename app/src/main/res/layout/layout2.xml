@@ -15,7 +15,8 @@
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
         android:indeterminate="true"
-        android:visibility="visible"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
         android:indeterminateDrawable="@drawable/progressbar"
         android:layout_centerHorizontal="true" />
 
@@ -23,7 +24,6 @@
         android:id="@+id/webViewHtml"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
         tools:layout_editor_absoluteX="136dp"
         tools:layout_editor_absoluteY="346dp">
 

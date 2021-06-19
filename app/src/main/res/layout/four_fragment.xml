@@ -27,26 +27,6 @@
         android:layout_height="1dp"
         android:background="#BEBEBE" />
 
-    <TextView
-        android:id="@+id/set_time_tv"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:drawablePadding="10dp"
-        android:paddingLeft="10dp"
-        android:clickable="true"
-        android:lines="1"
-        android:text="Set Time"
-        android:textColor="@color/black"
-        android:textSize="22dp"
-        android:theme="@style/ClickableView"
-        android:gravity="center_vertical"
-        android:textAlignment="viewStart"
-        tools:ignore="RtlCompat"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#BEBEBE" />
 
     <TextView
         android:id="@+id/remainder_tv"

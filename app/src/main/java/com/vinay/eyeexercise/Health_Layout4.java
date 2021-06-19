@@ -31,7 +31,7 @@ public class Health_Layout4 extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar_title_layout);
         TextView textView = findViewById(R.id.toolbar);
-        textView.setText("Layout4");
+        textView.setText("Yoga");
         //TODO here get the string stored in the string variable and do
 
         fetchDataFromFirebase(webView);

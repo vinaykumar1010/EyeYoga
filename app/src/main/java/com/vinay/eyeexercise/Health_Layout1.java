@@ -32,7 +32,7 @@ public class Health_Layout1 extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(R.layout.toolbar_title_layout);
         TextView textView = findViewById(R.id.toolbar);
-        textView.setText("Layout2");
+        textView.setText("Nutrition");
         //TODO here get the string stored in the string variable and do
 
         fetchDataFromFirebase(webView);

@@ -15,12 +15,18 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vinay.eyeexercise.MainActivity;
 import com.vinay.eyeexercise.R;
 import com.vinay.eyeexercise.SecondFragment;
+import com.vinay.eyeexercise.StartExercise;
 
 import java.util.ArrayList;
+import java.util.Objects;
+
+import Setting.AboutUs;
 
 
 /**
@@ -110,9 +116,6 @@ public class FirstFragment extends Fragment {
 
       //  getActivity().setTitle("Exercise");
 
-
-
-
         if (view == null) {
             view = inflater.inflate(R.layout.first_fragment, container, false);
         } else {
@@ -120,21 +123,29 @@ public class FirstFragment extends Fragment {
             parent.removeView(view);
         }
 
+
         Log.d(TAG, "list is here" + String.valueOf(list));
 
         // Button mStartAllButton = view.findViewById(R.id.start_exercise_all);
        // startAllExercises(mStartAllButton);
         ListView mListView = view.findViewById(R.id.exercise_list);
         mListView.setAdapter(exercisesAdapter);
+        clickListView(mListView);
+
         Log.d(TAG, "list item is in on create view " + String.valueOf(list));
 
+        Button startExe = (Button) view.findViewById(R.id.start_exercise);
+        clickStartAllExercise(startExe);
 
+//        callFirebase(mListView);
+        return view;
+    }
+
+    private void  clickListView(ListView mListView){
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
                 // String selectedItem = (String) mListView.getItemAtPosition(position);
                 Log.d(TAG, "clicked on list item");
                 Intent intent = new Intent(view.getContext(), TimerActivity.class);
@@ -147,17 +158,23 @@ public class FirstFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-//        callFirebase(mListView);
-        return view;
     }
 
-    private  void startAllExercises(Button mStartAllButton){
+
+    private  void clickStartAllExercise(Button startExe){
         Log.d(TAG,"startAllExercises");
-        mStartAllButton.setOnClickListener(new View.OnClickListener() {
+        startExe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d(TAG,"startAllExercises  onclick" );
+//                Toast.makeText(getActivity(), "Clicked Start Exercises",
+//                        Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), StartExercise.class);
+
+                // intent.putExtra("KEY" , "variable");
+                // TODO replaced with require activity because of error it may provide null
+                requireActivity().startActivity(intent);
 
                 // start and play all exercises serially
                 // step 1 : get position Id
@@ -166,7 +183,4 @@ public class FirstFragment extends Fragment {
     }
 
 
-    void callFirebase(ListView mListView) {
-
-    }
 }
