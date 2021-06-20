@@ -21,6 +21,9 @@ import com.vinay.eyeexercise.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import OnBoarding.IntroViewPagerAdapter;
+import OnBoarding.ScreenItem;
+
 public class IntroActivity extends AppCompatActivity {
 
     private ViewPager screenPager;

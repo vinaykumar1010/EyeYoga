@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.Light">
-        <activity android:name=".StartExercise"></activity>
+        <activity android:name="OnBoarding.IntroActivity"
+            android:theme="@style/Theme.Design.Light.NoActionBar"/>
+        <activity android:name=".StartExercise" />
         <activity android:name="Setting.AboutUs" />
         <activity android:name=".Health_Layout1" />
         <activity android:name=".Health_Layout4" />
@@ -19,7 +21,7 @@
         <activity android:name="Exercise.TimerActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name="OnBoarding.IntroActivity"
+            android:name=".SplashActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

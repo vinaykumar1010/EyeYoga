@@ -4,6 +4,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.Image;
+import android.media.ToneGenerator;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -12,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.vinay.eyeexercise.R;
@@ -41,6 +45,9 @@ public class TimerActivity extends AppCompatActivity {
     private TextView aExerciseDescription;
     TextView textView;
 
+    TextView yello;
+    ImageView thump;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +63,6 @@ public class TimerActivity extends AppCompatActivity {
         }
 
 
-
-
         aExerciseName = findViewById(R.id.exercise_name);
         aExerciseDescription = findViewById(R.id.exercise_description);
 
@@ -68,8 +73,11 @@ public class TimerActivity extends AppCompatActivity {
 
         aTextViewCountdown.setText("00:30");
         aButtonReset.setVisibility(View.INVISIBLE);
+        thump = findViewById(R.id.image_thumpsup);
+        yello = findViewById(R.id.textView_yello);
 
-
+        thump.setVisibility(View.INVISIBLE);
+        yello.setVisibility(View.INVISIBLE);
         addListenerOnStartButtonAndHandleAction();
         addListenerOnResetButtonAndHandleAction();
         getExerciseData();
@@ -92,6 +100,9 @@ public class TimerActivity extends AppCompatActivity {
         aButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                thump.setVisibility(View.INVISIBLE);
+                yello.setVisibility(View.INVISIBLE);
+
                 if (aTimerRunning) {
                     pauseTimer();
                 } else {
@@ -105,9 +116,9 @@ public class TimerActivity extends AppCompatActivity {
 
     private void startTimer(long millisecond) {
         //  cancelTimer();
-       if(mCountDownTimer!=null){
-           mCountDownTimer.cancel();
-       }
+        if (mCountDownTimer != null) {
+            mCountDownTimer.cancel();
+        }
 
         // constructor obj dega ,  2 fun ki defination b batao
         mCountDownTimer = new CountDownTimer(millisecond, 1000) {
@@ -126,9 +137,13 @@ public class TimerActivity extends AppCompatActivity {
             @Override
             public void onFinish() {
                 aTimerRunning = false;
-
+                ToneGenerator toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC, 100);
+                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                 // aButtonStartPause.setBackgroundResource(R.drawable.ic_pause_circle_outline);
-                aButtonStartPause.setText("PAUSE");
+                aButtonStartPause.setText("PLAY");
+
+                thump.setVisibility(View.VISIBLE);
+                yello.setVisibility(View.VISIBLE);
 
                 aTimeLeftInMillis = START_TIME_IN_MILLIS;
                 aButtonReset.setVisibility(View.INVISIBLE);
